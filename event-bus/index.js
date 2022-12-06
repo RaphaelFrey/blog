@@ -31,6 +31,10 @@ app.get('/events', (req, res) => {
    res.send(events);
 });
 
+process.on("uncaughtException", function (err) {
+    console.log(err);
+});
+
 app.listen(4005, () => {
     console.log('Listening on 4005');
 });
